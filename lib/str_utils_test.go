@@ -23,3 +23,21 @@ func TestIsPalindrome(t *testing.T) {
 		}
 	}
 }
+
+func TestReverseString(t *testing.T) {
+	var tests = []struct {
+		param    string
+		expected string
+	}{
+		{"1234", "4321"},
+		{"hello world", "dlrow olleh"},
+		{"123x321", "123x321"},
+	}
+
+	for i, test := range tests {
+		got := ReverseString(test.param)
+		if test.expected != got {
+			t.Errorf("%d. Test error (expected: %s, got: %s)", i, test.expected, got)
+		}
+	}
+}
