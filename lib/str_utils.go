@@ -2,7 +2,9 @@ package core
 
 func IsPalindrome(str string) bool {
 	for i := 0; i < len(str)/2; i++ {
-		if str[i] != str[len(str)-i-1] {
+		begin := i
+		last := len(str) - i - 1
+		if str[begin] != str[last] {
 			return false
 		}
 	}
