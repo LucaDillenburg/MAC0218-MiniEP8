@@ -41,3 +41,22 @@ func TestReverseString(t *testing.T) {
 		}
 	}
 }
+
+func TestCountIn(t *testing.T) {
+	var tests = []struct {
+		paramStr  string
+		paramChar rune
+		expected  int
+	}{
+		{"1234", '5', 0},
+		{"hello world", 'l', 3},
+		{"this is great", ' ', 2},
+	}
+
+	for i, test := range tests {
+		got := CountIn(test.paramStr, test.paramChar)
+		if test.expected != got {
+			t.Errorf("%d. Test error (expected: %d, got: %d)", i, test.expected, got)
+		}
+	}
+}
