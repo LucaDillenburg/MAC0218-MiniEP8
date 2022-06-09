@@ -10,3 +10,11 @@ func IsPalindrome(str string) bool {
 	}
 	return true
 }
+
+func ReverseString(str string) string {
+	reversed := make([]byte, 0)
+	for i := 0; i < len(str); i++ {
+		reversed = append(reversed, str[len(str)-1-i])
+	}
+	return string(reversed)
+}
